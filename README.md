@@ -1,7 +1,7 @@
 # Python Notes
 
 This is my Python Notes Repo
-This Repo include Notes for 3 main libraries for Data Science & Machine Learning used in Python
+This Repo include Notes for 3 main libraries in Python used for **Data Science** & **Machine Learning**
 
 - [numpy](#numpy)
 - [matplotlib](#matplotlib)
