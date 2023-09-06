@@ -1,108 +1,100 @@
 # Python Notes
-This is my Python Notes Repo</br>
+
+This is my Python Notes Repo
 This Repo include Notes for 3 main libraries for Data Science & Machine Learning used in Python
+
 - [numpy](#numpy)
 - [matplotlib](#matplotlib)
 - [pandas](#pandas)
 
 # numpy
-  ## np array boolean
 
+## np array boolean
 
+```python
+# Import numpy
+import numpy as np
 
-  ```python
-  # Import numpy
-  import numpy as np
-  
-  # Calculate the BMI: bmi
-  height_in = [74, 74, 72, 72, 73, 69, 69, 71, 76, 71]
-  weight_lb = [180, 215, 210, 210, 188, 176, 209, 200, 231, 180]
-  
-  np_height_m = np.array(height_in) * 0.0254
-  np_weight_kg = np.array(weight_lb) * 0.453592
-  bmi = np_weight_kg / (np_height_m**2)
-  
-  # Create the light array (boolean array)
-  light = bmi < 25
-  print(light)
-  # BMIs of all baseball players whose BMI is below 21
-  print(bmi[light])
-  ```
-  
+# Calculate the BMI: bmi
+height_in = [74, 74, 72, 72, 73, 69, 69, 71, 76, 71]
+weight_lb = [180, 215, 210, 210, 188, 176, 209, 200, 231, 180]
+
+np_height_m = np.array(height_in) * 0.0254
+np_weight_kg = np.array(weight_lb) * 0.453592
+bmi = np_weight_kg / (np_height_m**2)
+
+# Create the light array (boolean array)
+light = bmi < 25
+print(light)
+# BMIs of all baseball players whose BMI is below 21
+print(bmi[light])
+```
+
       [ True False False False  True False False False False False]
       [23.11037639 24.80333518]
-  
-  
-  ## Know the number of rows and cols of np array
-  
-  
-  
-  ```python
-  baseball = [[180, 78.4], [215, 102.7], [210, 98.5], [188, 75.2]]
-  
-  # Create a 2D numpy array from baseball: np_baseball
-  np_baseball = np.array(baseball)
-  
-  # Print out the type of np_baseball
-  print(type(np_baseball))
-  
-  # Print out the shape of np_baseball
-  print(np_baseball.shape)
-  ```
-  
+
+## Know the number of rows and cols of np array
+
+```python
+baseball = [[180, 78.4], [215, 102.7], [210, 98.5], [188, 75.2]]
+
+# Create a 2D numpy array from baseball: np_baseball
+np_baseball = np.array(baseball)
+
+# Print out the type of np_baseball
+print(type(np_baseball))
+
+# Print out the shape of np_baseball
+print(np_baseball.shape)
+```
+
       <class 'numpy.ndarray'>
       (4, 2)
-  
-  
-  ## 2D Arithmetic
-  
-  
-  
-  ```python
-  # Import numpy package
-  import numpy as np
-  
-  np_mat = np.array([[1, 2], [3, 4], [5, 6]])
-  
-  # Create numpy array: conversion
-  # Multiply the first col by 2 & the second col by 3
-  conversion = np.array([2, 3])
-  
-  # Print out product of np_baseball and conversion
-  print(np_mat * conversion)
-  ```
-  
+
+## 2D Arithmetic
+
+```python
+# Import numpy package
+import numpy as np
+
+np_mat = np.array([[1, 2], [3, 4], [5, 6]])
+
+# Create numpy array: conversion
+# Multiply the first col by 2 & the second col by 3
+conversion = np.array([2, 3])
+
+# Print out product of np_baseball and conversion
+print(np_mat * conversion)
+```
+
       [[ 2  6]
        [ 6 12]
        [10 18]]
-  
-  
-  ## Filtering np array
-  
-  
-  
-  ```python
-  import numpy as np
-  
-  positions = ["GK", "M", "A", "D"]
-  heights = [191, 184, 185, 180]
-  # Convert positions and heights to numpy arrays: np_positions, np_heights
-  np_positions = np.array(positions)
-  np_heights = np.array(heights)
-  
-  # Heights of the goalkeepers: gk_heights
-  gk_heights = np_heights[np_positions == "GK"]
-  
-  # Heights of the other players: other_heights
-  other_heights = np_heights[np_positions != "GK"]
-  
-  # Print out the median height of goalkeepers
-  print("Median height of goalkeepers: " + str(np.median(gk_heights)))
-  
-  # Print out the median height of other players
-  print("Median height of other players: " + str(np.median(other_heights)))
-  ```
-  
+
+## Filtering np array
+
+```python
+import numpy as np
+
+positions = ["GK", "M", "A", "D"]
+heights = [191, 184, 185, 180]
+# Convert positions and heights to numpy arrays: np_positions, np_heights
+np_positions = np.array(positions)
+np_heights = np.array(heights)
+
+# Heights of the goalkeepers: gk_heights
+gk_heights = np_heights[np_positions == "GK"]
+
+# Heights of the other players: other_heights
+other_heights = np_heights[np_positions != "GK"]
+
+# Print out the median height of goalkeepers
+print("Median height of goalkeepers: " + str(np.median(gk_heights)))
+
+# Print out the median height of other players
+print("Median height of other players: " + str(np.median(other_heights)))
+```
+
       Median height of goalkeepers: 191.0
       Median height of other players: 184.0
 
@@ -113,8 +105,6 @@ This Repo include Notes for 3 main libraries for Data Science & Machine Learning
 #### Notes
 
 `plt.clf()` to clear
-
-
 
 ```python
 import matplotlib.pyplot as plt
@@ -141,16 +131,15 @@ plt.xlim(2000,None)
 plt.show()
 ```
 
-## Scatter Plot
+![png](images/output_1_0.png)
 
+## Scatter Plot
 
 #### Note
 
 Use log scale
 
 `plt.xscale('log')`
-
-
 
 ```python
 import matplotlib.pyplot as plt
@@ -165,13 +154,13 @@ plt.scatter(year, pop, color="red", marker="x")
 plt.show()
 ```
 
+![png](images/output_4_0.png)
+
 ## Histogram
 
 `plt.hist(list,bins)`
 
 bins = 10 by default
-
-
 
 ```python
 import matplotlib.pyplot as plt
@@ -210,11 +199,11 @@ plt.hist(x, bins=6, color="red", edgecolor="black", linewidth=2)
 plt.show()
 ```
 
+![png](images/output_6_0.png)
+
 # pandas
 
 ## Dictionary to DataFrame
-
-
 
 ```python
 # Pre-defined lists
@@ -250,10 +239,7 @@ print(cars)
     MOR        Morocco          True            70
     EG           Egypt          True            45
 
-
 ## CSV to DataFrame
-
-
 
 ```python
 # Import pandas as pd
@@ -287,10 +273,7 @@ print(brics2)
     MOR            70       Morocco          True
     EG             45         Egypt          True
 
-
 ## Col access using brackets
-
-
 
 ```python
 import pandas as pd
@@ -333,10 +316,7 @@ print("----------------------------------------------")
     EG          Egypt
     ----------------------------------------------
 
-
 ## Row access using brackets
-
-
 
 ```python
 import pandas as pd
@@ -364,11 +344,9 @@ print("----------------------------------------------")
     IN             18      India         False
     ----------------------------------------------
 
-
 ## Rows & Cols access using loc & iloc
-```[Subsetting DataFrame]```
 
-
+`[Subsetting DataFrame]`
 
 ```python
 import pandas as pd
