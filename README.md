@@ -7,6 +7,8 @@ This Repo include Notes for 3 main libraries in Python used for **Data Science**
 - [matplotlib](#matplotlib)
 - [pandas](#pandas)
 
+![python](https://github.com/YoussefAboelwafa/Python_Golden-Notes/assets/96186143/09e861d3-878f-40c2-97f2-bea1e21016b9)
+
 # numpy
 ## np array boolean
 
